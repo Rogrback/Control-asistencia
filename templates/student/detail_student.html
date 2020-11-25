@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ object.first_name }} {{ object.last_name}}
+{% endblock title %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center"> 
+        <div class="cell large-4 card" style="width: 300px;">
+            <div class="card-divider" style="background-color: chocolate;">
+                DETALLES DEL ESTUDIANTE
+            </div>
+            
+            {% if student.photography %}
+                <img src="{{ student.photography.url }}">
+            {% else %}
+                <img src="{% static 'img/bg1.jpg' %}" alt="">
+            {% endif %}
+
+            <div class="card-section" style="background-color: burlywood;">
+                <h4>This is a card.</h4>
+                <p><span class="label">NUMERO DE MATRICULA</span></p>
+                <p>{{ student.student_enrollment }}</p>
+                <p><span class="label">ESTUDIANTE</span></p>
+                <p>{{ student.first_name }} {{ student.last_name }}</p>
+                <p><span class="label">GRADO</span></p>
+                <p>{{ student.grade }}</p>
+                <p><a class="button success" href="{% url 'student_app:student_course'%}">Volver</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<form class="cell grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+</form>
+
+{% endblock content%}

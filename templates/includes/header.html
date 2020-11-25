@@ -1,0 +1,15 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text"><a href="{% url 'assistance_app:main' %}" style="margin: 0; padding: 0;"> ASISTENCIA</a></li>
+        <li><a href="{% url 'assistance_app:assistance_all' %}">Listar</a></li>
+        <li><a href="{% url 'student_app:student_course' %}">Estudiantes</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Buscar asistencia"></li>
+        <li><a href="{% url 'assistance_app:create_assistance' %}" class="button">Registrar asistencia</a></li>
+      </ul>
+    </div>
+  </div>

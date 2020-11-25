@@ -1,0 +1,23 @@
+<h1>Buscar estudiante por nombre</h1>
+<form method="get"> {% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Input first name">
+    <button type="submit">Buscar</button>
+</form>
+
+<h3>Lista resultados</h3>
+    <table border="1">  
+    {% for e in student %}
+        <tr align="center">
+            <td>Matrícula estudiante
+            <td>Nombres</td>
+            <td>Apellidos</td>
+            <td>Grado</td>
+        </tr>
+        <tr>
+            <td>{{ e.student_enrollment }}</td>
+            <td>{{ e.first_name }}</td>
+            <td>{{ e.last_name }}</td>
+            <td>{{ e.grade }}</td>
+        </tr>
+    {% endfor %}
+    </table>

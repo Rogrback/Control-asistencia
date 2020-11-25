@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<h1 class="ejemplo1">Registrar nuevo docente</h1>
+
+<form method="post">{% csrf_token %}
+    <h3>Datos docente</h3>
+    <p>
+        {{form.id_card}}
+    </p>
+    <p>
+        {{form.first_name}}
+    </p>
+    <p>
+        {{form.last_nme}}
+    </p>
+    <p>
+        {{form.phone}}
+    </p>
+    <p>
+        {{form.user}}
+    </p>
+    <p>
+        {{form.password}}
+    </p>
+    <p>
+        {{form.user_type}}
+    </p>
+    {{ form.as_p }}
+    <button type="submit">Agregar</button>
+</form>
+
+<!-- Anchors (links) -->
+<a href="about.html" class="button">Learn More</a>
+<a href="#features" class="button">View All Features</a>
+
+<!-- Buttons (actions) -->
+<button type="button" class="success button">Save</button>
+<button type="button" class="alert button">Delete</button>

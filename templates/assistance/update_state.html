@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Modificar asistencia
+{% endblock title %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">
+            Modificar asistencia
+        </h1>
+        <div class="cell">
+            <form class="grid-x  callout grid-margin-x" method="POST"> {% csrf_token %}
+                <div class="cell large-6">
+                    <label>Estudiante:
+                        {{ form.student }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label>Curso:
+                        {{ form.course }}
+                    </label>                    
+                </div>
+                <div class="cell large-6">
+                    <label>Estado:
+                        {{ form.state }}
+                    </label>
+                </div>
+                <div class="cell">
+                    <button type="submit" class="success button">Guardar</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
